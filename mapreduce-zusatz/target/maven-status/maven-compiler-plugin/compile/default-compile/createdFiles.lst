@@ -1,0 +1,8 @@
+de/fhm/bigdata/projekt/anagramm/AnagrammMapper.class
+de/fhm/bigdata/projekt/Driver.class
+de/fhm/bigdata/projekt/charCount/CharCount.class
+de/fhm/bigdata/projekt/anagramm/AnagrammReducer.class
+de/fhm/bigdata/projekt/charCount/SummingReducer.class
+de/fhm/bigdata/projekt/charCount/TokenizingMapper$Counters.class
+de/fhm/bigdata/projekt/charCount/TokenizingMapper.class
+de/fhm/bigdata/projekt/anagramm/Anagramm.class

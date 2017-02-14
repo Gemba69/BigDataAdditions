@@ -1,0 +1,7 @@
+/Users/benni/bigData/BigDataProjekt/mapreduce-zusatz/src/main/java/de/fhm/bigdata/projekt/charCount/SummingReducer.java
+/Users/benni/bigData/BigDataProjekt/mapreduce-zusatz/src/main/java/de/fhm/bigdata/projekt/Driver.java
+/Users/benni/bigData/BigDataProjekt/mapreduce-zusatz/src/main/java/de/fhm/bigdata/projekt/anagramm/AnagrammReducer.java
+/Users/benni/bigData/BigDataProjekt/mapreduce-zusatz/src/main/java/de/fhm/bigdata/projekt/charCount/TokenizingMapper.java
+/Users/benni/bigData/BigDataProjekt/mapreduce-zusatz/src/main/java/de/fhm/bigdata/projekt/charCount/CharCount.java
+/Users/benni/bigData/BigDataProjekt/mapreduce-zusatz/src/main/java/de/fhm/bigdata/projekt/anagramm/AnagrammMapper.java
+/Users/benni/bigData/BigDataProjekt/mapreduce-zusatz/src/main/java/de/fhm/bigdata/projekt/anagramm/Anagramm.java
