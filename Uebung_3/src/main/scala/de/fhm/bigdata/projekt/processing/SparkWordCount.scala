@@ -17,14 +17,14 @@ object SparkWordCount {
       // Split up into words.
       val words = input.flatMap(line => line.split(" "))
       // Transformation into word and there counter.
-	 val wordCounts = words.map((_, 1)).reduceByKey(_ + _)
+	  val wordCounts = words.map((_, 1)).reduceByKey(_ + _)
       // Save the word count back out to a text file
       wordCounts.saveAsTextFile(outputFile)
     
 	  //filter top Words
       val filtered = wordCounts.filter(_._2 >= 3)
 	  
-	  outputFileFilter .saveAsTextFile(
+	  outputFileFilter.saveAsTextFile(outputFileFilter)
 
   }
 }
