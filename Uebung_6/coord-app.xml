@@ -23,8 +23,6 @@
   <datasets>
   </datasets>
   <input-events>
-      <instance>${coord:current(1 + (coord:tzOffset() / 60))}</instance>
-    </data-in>
   </input-events>
   <action name="Anagram-MapReduce">
    <map-reduce>
@@ -68,7 +66,7 @@
             <mode>client<mode>
             <name>SparkWordCount</name>
             <class>org.apache.spark.examples.mllib.JavaALS</class>
-            <jar>/lib/spark-examples_2.10-1.1.0.jar</jar>
+            <jar>/lib/bigdata-sparkwordcount-1.0.0-SNAPSHOT.jar</jar>
             <spark-opts>--executor-memory 20G --num-executors 50</spark-opts>
             <arg>inputpath=hdfs://localhost/user/cloudera/pg14591.txt</arg>
             <arg>inputpath=hdfs://localhost/user/cloudera/WordCountResultOozie.txt</arg>
