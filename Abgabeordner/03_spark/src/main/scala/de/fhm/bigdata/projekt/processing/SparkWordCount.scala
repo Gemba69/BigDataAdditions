@@ -23,7 +23,7 @@ object SparkWordCount {
       sortedCounts.saveAsTextFile(outputFile)
     
 	  //filter top Words
-      val filtered = sortedCounts.filter(_._2 >=filterValue)
+      val filtered = sortedCounts.filter(_._2 >= filterValue)
 	  
 	  filtered.saveAsTextFile(outputFileFilter)
 
