@@ -10,7 +10,7 @@ public class Driver {
  		int exitCode = -1;
  		ProgramDriver pgd = new ProgramDriver();
  		try {
- 			pgd.addClass("anagram", Anagramm.class,
+ 			pgd.addClass("anagram", Anagram.class,
  					"MapReduce program for Anagramms.");
       //pgd.addClass("tfidf", TFIDFJobController.class,
    					//"MapReduce program to compute TF-IDF of input text files.");
