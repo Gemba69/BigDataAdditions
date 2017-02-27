@@ -20,55 +20,19 @@
                  start="${jobStart}" end="${jobEnd}"
                  timezone="UTC"
                  xmlns="uri:oozie:coordinator:0.1">
+<datasets>
+      <dataset name="input" frequency="${coord:days(1)}" initial-instance="${startTime}" timezone="${timeZoneDef}">
+         <uri-template>${triggerDatasetDir}</uri-template>
+      </dataset>
+   </datasets>
+   <input-events>
+         <data-in name="sampleInput" dataset="input">
+         <instance>${startTime}</instance>
+      </data-in>
+   </input-events>
   <action>
   <workflow>
-   <map-reduce xmlns="uri:oozie:mapreduce-action:0.1">
-      <prepare>
-		<delete path="${jobOutput}"/>
-      </prepare>
-      <configuration>
-         <property>
-           <name>mapred.mapper.class</name>
-           <value>de.fhm.bigdata.projekt.anagramm.AnagrammMapper</value>
-         </property>
-         <property>
-           <name>mapred.reducer.class</name>
-           <value>de.fhm.bigdata.projekt.anagramm.AnagrammReducer</value>
-         </property>
-         <property>
-             <name>mapred.input.dir</name>
-              <value>/user/cloudera/pg14591.txt</value>
-          </property>
-          <property>
-              <name>mapred.output.dir</name>
-              <value>/user/cloudera/anagramResultOozie.txt</value>
-           </property>
-       </configuration>
-     </map-reduce>
-     <ok to="Spark-Wordcount"/>
-     <error to="errorcleanup"/>
-        <spark xmlns="uri:oozie:spark-action:0.1">
-            <prepare>
-                <delete path="${jobOutput}"/>
-            </prepare>
-            <configuration>
-                <property>
-                    <name>mapred.compress.map.output</name>
-                    <value>true</value>
-                </property>
-            </configuration>
-            <master>local[*]</master>
-            <mode>client<mode>
-            <name>SparkWordCount</name>
-            <class>org.apache.spark.examples.mllib.JavaALS</class>
-            <jar>/lib/bigdata-sparkwordcount-1.0.0-SNAPSHOT.jar</jar>
-            <spark-opts>--executor-memory 20G --num-executors 50</spark-opts>
-            <arg>inputpath=hdfs://localhost/user/cloudera/pg14591.txt</arg>
-            <arg>inputpath=hdfs://localhost/user/cloudera/WordCountResultOozie.txt</arg>
-            <arg>3</arg>
-        </spark>
-        <ok to="success"/>
-        <error to="errorcleanup"/>
+      <app-path>${workflowRoot}/workflow-action.xml</app-path>
 		</workflow>
     </action>
 </coordinator-app>
