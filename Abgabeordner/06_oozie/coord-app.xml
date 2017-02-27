@@ -20,8 +20,8 @@
                  start="${jobStart}" end="${jobEnd}"
                  timezone="UTC"
                  xmlns="uri:oozie:coordinator:0.1">
-  <action name="Anagram-MapReduce">
-   <map-reduce>
+  <action>
+   <map-reduce xmlns="uri:oozie:mapreduce-action:0.1">
       <prepare>
 		<delete path="${jobOutput}"/>
       </prepare>
@@ -47,7 +47,7 @@
      <ok to="Spark-Wordcount"/>
      <error to="errorcleanup"/>
   </action>
-      <action name="Spark-Wordcount">
+      <action>
         <spark xmlns="uri:oozie:spark-action:0.1">
             <prepare>
                 <delete path="${jobOutput}"/>

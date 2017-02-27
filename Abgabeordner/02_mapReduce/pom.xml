@@ -18,7 +18,7 @@
 					</descriptors>
 					<archive>
 						<manifest>
-							<mainClass>org.fhmuenster.bde.mr.Driver</mainClass>
+							<mainClass>de.fhm.bigdata.project.Driver</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
