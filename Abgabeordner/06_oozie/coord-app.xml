@@ -20,10 +20,6 @@
                  start="${jobStart}" end="${jobEnd}"
                  timezone="UTC"
                  xmlns="uri:oozie:coordinator:0.1">
-  <datasets>
-  </datasets>
-  <input-events>
-  </input-events>
   <action name="Anagram-MapReduce">
    <map-reduce>
       <prepare>
