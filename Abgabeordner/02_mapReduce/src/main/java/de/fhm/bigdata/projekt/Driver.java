@@ -2,7 +2,7 @@ package de.fhm.bigdata.projekt;
 
 import org.apache.hadoop.util.ProgramDriver;
 
-import de.fhm.bigdata.projekt.anagramm.Anagramm;
+import de.fhm.bigdata.projekt.anagram.Anagram;
 
 public class Driver {
 
