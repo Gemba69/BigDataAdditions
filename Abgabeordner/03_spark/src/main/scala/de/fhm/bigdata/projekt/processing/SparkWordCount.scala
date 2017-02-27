@@ -10,7 +10,7 @@ object SparkWordCount {
 	//Parsing the args
 	  val inputFile = args(0)
       val outputFile = args(1)
-	  val filterValue = args(2)
+	  val filterValue = args(2).toInt
 	  val outputFileFilter = "Filtered" + outputFile
 	  
       val input =  sc.textFile(inputFile)
@@ -18,11 +18,12 @@ object SparkWordCount {
       val words = input.flatMap(line => line.split(" "))
       // Transformation into word and there counter.
 	  val wordCounts = words.map((_, 1)).reduceByKey(_ + _)
+	  val sortedCounts = wordCounts.sortBy(_._2)
       // Save the word count back out to a text file
-      wordCounts.saveAsTextFile(outputFile)
+      sortedCounts.saveAsTextFile(outputFile)
     
 	  //filter top Words
-      val filtered = wordCounts.filter(_._2 >= filterValue)
+      val filtered = sortedCounts.filter(_._2 >=filterValue)
 	  
 	  filtered.saveAsTextFile(outputFileFilter)
 

@@ -12,7 +12,7 @@ import org.apache.hadoop.mapred.TextOutputFormat;
 public class Anagram {
 
 	public static void main(String[] args) throws Exception{
-		JobConf conf = new JobConf(Anagramm.class);
+		JobConf conf = new JobConf(Anagram.class);
 		conf.setJobName("Anagram");
 
 		conf.setOutputKeyClass(Text.class);
