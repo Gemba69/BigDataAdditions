@@ -21,6 +21,7 @@
                  timezone="UTC"
                  xmlns="uri:oozie:coordinator:0.1">
   <action>
+  <workflow>
    <map-reduce xmlns="uri:oozie:mapreduce-action:0.1">
       <prepare>
 		<delete path="${jobOutput}"/>
@@ -46,8 +47,6 @@
      </map-reduce>
      <ok to="Spark-Wordcount"/>
      <error to="errorcleanup"/>
-  </action>
-      <action>
         <spark xmlns="uri:oozie:spark-action:0.1">
             <prepare>
                 <delete path="${jobOutput}"/>
@@ -70,5 +69,6 @@
         </spark>
         <ok to="success"/>
         <error to="errorcleanup"/>
+		</workflow>
     </action>
 </coordinator-app>
